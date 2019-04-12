@@ -1,0 +1,24 @@
+
+
+1. Application httplogmonitor reads the data from the file once and batches the log lines for window of 10 seconds.
+2. Collector creates the batch of log lines for each 10 seconds.
+3. From Collector, Statistics Analyzer get the stream of batched log lines and creates a statistics to be displayed on the
+   console.
+4. Threshold analyzer will also take stream from collector and keep the rolling window of 10 seconds.
+
+All the three main parts below working on streaming of data. File has been read using streaming and same is being sent to Collector as stream
+of log lines, Collector changed the incoming stream in batched log lines stream.
+Statistics Analyzer takes the input stream from Collector and create Statistics alert from that.
+
+Tech Stack.
+
+1. RxJava 2
+2. Java 8
+3. Maven
+
+
+
+How to run it
+
+1. Import Project in IDE
+2. Install Maven and dependencies
